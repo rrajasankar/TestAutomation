@@ -1,0 +1,30 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${URL}            http://www.automationpractice.com
+@{CREDENTIALS}    rajasankar120388@gmail.com    testing
+
+*** Test Cases ***
+CreateAccount
+    Open Browser    ${URL}    chrome
+    Maximize Browser Window
+    Sleep    5s
+    Click Element    //a[contains(@href,'my-account') and @class='login']
+    Sleep    3s
+    Input Text    //*[@id="email_create"]    @{CREDENTIALS}[0]
+    Click Element    //*[@id="SubmitCreate"]
+    Sleep    5s
+    Click Element    //*[@id="id_gender1"]
+    Input Text    //*[@id="customer_firstname"]    Raja
+    Input Text    //*[@id="customer_lastname"]    Sankar
+    Input Password    //*[@id="passwd"]    @{CREDENTIALS}[1]
+    Select From List By Value    xpath=//*[@id="days"]    12
+    Select From List By Value    xpath=//*[@id="months"]    3
+    Select From List By Value    xpath=//*[@id="years"]    1988
+    Input Text    //*[@id="address1"]    Electronic City
+    Input Text    //*[@id="city"]    Bangalore
+    Select From List By Value    xpath=//*[@id="id_state"]    5
+    Input Text    //*[@id="postcode"]    54321
+    Input Text    //*[@id="phone_mobile"]    9876543210
+    Click Element    //*[@id="submitAccount"]
