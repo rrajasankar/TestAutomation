@@ -3,19 +3,18 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${URL}            https://www.facebook.com/
-${BROWSER}        gc
-${FIRST NAME}     Towfiq
-${FIRST NAME LOCATOR}    id=u_0_1
-${LAST NAME}      Rahman
-${LAST NAME LOCATOR}    id=u_0_3
-${EMAIL}          testemail@gmail.com
-${EMAIL LOCATOR}    id=u_0_5
-${RE EMAIL LOCATOR}    id=u_0_8
-${PASSWORD}       12345
-${PASSWORD LOCATOR}    id=u_0_a
+${BROWSER}        chrome
+${FIRST NAME}     Raja
+${FIRST NAME LOCATOR}    id="u_0_l
+${LAST NAME}      Sankar
+${LAST NAME LOCATOR}    id="u_0_n
+${EMAIL}          rajasankar@gmail.com
+${EMAIL LOCATOR}    id=u_0_q
+${PASSWORD}       testing
+${PASSWORD LOCATOR}    id=u_0_x
 ${TITLE}          Welcome to Facebook - Log In, Sign Up or Learn More
-${SIGNUP BUTTON LOCATOR}    id=u_0_i
-${SEX MALE LOCATOR}    id=u_0_e
+${SIGNUP BUTTON LOCATOR}    id=u_0_13
+${SEX MALE LOCATOR}    id=u_0_c
 ${ERROR MESSAGE LOCATOR}    xpath=//*[contains(text(),'Select your birthday. You can change who can see this later')]
 
 *** Keywords ***
@@ -34,10 +33,6 @@ Enter Last Name
 Enter Email
     [Arguments]    ${EMAIL}
     Input Text    ${EMAIL LOCATOR}    ${EMAIL}
-
-ReEnter Email
-    [Arguments]    ${EMAIL}
-    Input Text    ${RE EMAIL LOCATOR}    ${EMAIL}
 
 Enter Password
     [Arguments]    ${PASSWORD}
