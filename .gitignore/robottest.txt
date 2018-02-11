@@ -1,0 +1,18 @@
+*** Settings ***
+Suite Setup       Open Facebook login page
+Suite Teardown    Close Browser
+Resource          Resource.txt
+
+*** Test Cases ***
+Sign Up not possible without filling birthday
+    [Setup]
+    Enter First Name    ${FIRST NAME}
+    Enter Last Name    ${LAST NAME}
+    Enter Email    ${EMAIL}
+    ReEnter Email    ${EMAIL}
+    Enter Password    ${PASSWORD}
+    Select Sex    ${SEX MALE LOCATOR}
+    Submit Information
+    Verify SignUp Failed
+    [Teardown]
+
