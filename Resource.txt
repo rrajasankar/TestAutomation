@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${URL}            http://www.automationpractice.com
-@{CREDENTIALS}    rajasankar120388@gmail.com    testing
+@{CREDENTIALS}    rajasankar12031988@gmail.com    testing
 
 *** Test Cases ***
 CreateAccount
@@ -28,3 +28,32 @@ CreateAccount
     Input Text    //*[@id="postcode"]    54321
     Input Text    //*[@id="phone_mobile"]    9876543210
     Click Element    //*[@id="submitAccount"]
+    Close Browser
+
+Order History
+    Login
+    Click Element    //*[contains(@href,'history') and @title='Orders']
+    Sleep    5s
+    Click Element    //*[contains(@href,'my-account') and @class='btn btn-default button button-small']
+    Sleep    5s
+    Click Element    //*[contains(@href,'logout') and @class='logout']
+    Close Browser
+
+Update Personal Info
+    Login
+    Click Element    //*[contains(@href,'identity') and @title='Information']
+    Sleep    5s
+    Input Password    //*[@id="old_passwd"]    @{CREDENTIALS}[1]
+    Click Element    //*[@name="submitIdentity"]
+    Sleep    5s
+    Click Element    //*[contains(@href,'logout') and @class='logout']
+    Close Browser
+
+*** Keywords ***
+Login
+    Open Browser    ${URL}    chrome
+    Maximize Browser Window
+    Click Element    //*[@title='Log in to your customer account' and @class='login']
+    Input Text    //*[@id="email"]    @{CREDENTIALS}[0]
+    Input Password    //*[@id="passwd"]    @{CREDENTIALS}[1]
+    Click Button    //*[@id="SubmitLogin"]
