@@ -9,7 +9,6 @@ Sign Up not possible without filling birthday
     Enter First Name    ${FIRST NAME}
     Enter Last Name    ${LAST NAME}
     Enter Email    ${EMAIL}
-    ReEnter Email    ${EMAIL}
     Enter Password    ${PASSWORD}
     Select Sex    ${SEX MALE LOCATOR}
     Submit Information
