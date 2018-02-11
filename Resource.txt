@@ -27,7 +27,6 @@ Update Personal Info
 
 *** Keywords ***
 Login
-    Open Browser    ${URL}    chrome
     Maximize Browser Window
     Click Element    //*[@title='Log in to your customer account' and @class='login']
     Input Text    //*[@id="email"]    @{CREDENTIALS}[0]
